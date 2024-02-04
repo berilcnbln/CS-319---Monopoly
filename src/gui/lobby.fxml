@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane prefHeight="507.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.LobbyController">
+   <children>
+      <ImageView fitHeight="79.0" fitWidth="424.0" layoutX="8.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@models/logo.png" />
+         </image>
+      </ImageView>
+      <GridPane fx:id="playersPane" gridLinesVisible="true" layoutX="20.0" layoutY="103.0" prefHeight="383.0" prefWidth="482.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="  Username:" />
+            <Label text="  Token:" GridPane.columnIndex="1" />
+            <Label text="  Team:" GridPane.columnIndex="2" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="player0Label" layoutX="61.0" layoutY="19.0" text="Player1" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+               <children>
+                  <Label fx:id="player2Label" layoutX="61.0" layoutY="19.0" text="Player3" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <Label fx:id="player1Label" layoutX="61.0" layoutY="19.0" text="Player2" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+               <children>
+                  <Label fx:id="player3Label" layoutX="61.0" layoutY="19.0" text="Player4" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+               <children>
+                  <Label fx:id="player4Label" layoutX="61.0" layoutY="19.0" text="Player5" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6">
+               <children>
+                  <Label fx:id="player5Label" layoutX="61.0" layoutY="19.0" text="Player6" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Button fx:id="tokenButton0" layoutX="16.0" layoutY="15.0" mnemonicParsing="false" onAction="#tokenButtonUsed" prefHeight="26.0" prefWidth="127.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="tokenButton1" layoutX="16.0" layoutY="15.0" mnemonicParsing="false" onAction="#tokenButtonUsed" prefHeight="26.0" prefWidth="127.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <Button fx:id="tokenButton2" layoutX="17.0" layoutY="15.0" mnemonicParsing="false" onAction="#tokenButtonUsed" prefHeight="26.0" prefWidth="127.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <Button fx:id="tokenButton3" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#tokenButtonUsed" prefHeight="26.0" prefWidth="127.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <Button fx:id="tokenButton4" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#tokenButtonUsed" prefHeight="26.0" prefWidth="127.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <Button fx:id="tokenButton5" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#tokenButtonUsed" prefHeight="26.0" prefWidth="127.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <Button fx:id="teamButton0" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#teamBoxUsed" prefHeight="26.0" prefWidth="127.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="teamButton1" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#teamBoxUsed" prefHeight="26.0" prefWidth="127.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <children>
+                  <Button fx:id="teamButton2" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#teamBoxUsed" prefHeight="26.0" prefWidth="127.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <children>
+                  <Button fx:id="teamButton3" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#teamBoxUsed" prefHeight="26.0" prefWidth="127.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <children>
+                  <Button fx:id="teamButton4" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#teamBoxUsed" prefHeight="26.0" prefWidth="127.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <children>
+                  <Button fx:id="teamButton5" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#teamBoxUsed" prefHeight="26.0" prefWidth="127.0" text="Button" />
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <AnchorPane layoutX="537.0" layoutY="25.0" prefHeight="135.0" prefWidth="193.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c0ffca" height="135.0" stroke="BLACK" strokeType="INSIDE" width="159.0" />
+            <Label layoutX="38.0" layoutY="52.0" text="Game Pin:" />
+            <Label fx:id="pinLabel" layoutX="53.0" layoutY="81.0" text="000000" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="520.0" layoutY="216.0" text="Game Options:" />
+      <CheckBox fx:id="privateBox" layoutX="538.0" layoutY="318.0" mnemonicParsing="false" onAction="#checkBoxUsed" text="Private Lobby" />
+      <CheckBox fx:id="speedDieBox" layoutX="538.0" layoutY="286.0" mnemonicParsing="false" onAction="#checkBoxUsed" text="Speed Die" />
+      <CheckBox fx:id="allianceBox" layoutX="537.0" layoutY="254.0" mnemonicParsing="false" onAction="#checkBoxUsed" text="Alliance" />
+      <Button fx:id="startButton" layoutX="569.0" layoutY="411.0" mnemonicParsing="false" onAction="#startButtonPressed" prefHeight="26.0" prefWidth="64.0" text="Start" />
+      <Button fx:id="leaveButton" layoutX="569.0" layoutY="450.0" mnemonicParsing="false" onAction="#leaveButtonPressed" prefHeight="26.0" prefWidth="64.0" text="Leave" />
+   </children>
+</AnchorPane>

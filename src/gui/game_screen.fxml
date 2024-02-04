@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GameScreenController">
+   <children>
+      <Button fx:id="diceButton" layoutX="1344.0" layoutY="889.0" mnemonicParsing="false" onAction="#handleDiceButton" prefHeight="48.0" prefWidth="126.0" text="Roll Dice" />
+      <Label fx:id="die1" alignment="CENTER" layoutX="1354.0" layoutY="947.0" text="Die1" textAlignment="CENTER" textFill="#902f2f">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <Label fx:id="die2" alignment="CENTER" layoutX="1405.0" layoutY="947.0" prefHeight="26.0" prefWidth="75.0" text="Die2" textAlignment="CENTER" textFill="#902f2f">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <GridPane gridLinesVisible="true" layoutX="1061.0" layoutY="12.0" prefHeight="448.0" prefWidth="844.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="451.928955078125" minWidth="10.0" prefWidth="231.57470703125" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="349.9208984375" minWidth="10.0" prefWidth="230.94482421875" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="528.9893798828125" minWidth="10.0" prefWidth="246.05517578125" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="40.49603271484375" minHeight="0.0" prefHeight="1.0" />
+            <RowConstraints maxHeight="118.4" minHeight="5.50396728515625" prefHeight="20.6" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="350.7999961853028" minHeight="10.0" prefHeight="179.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="350.7999961853028" minHeight="10.0" prefHeight="23.599999999999994" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="350.7999961853028" minHeight="10.0" prefHeight="216.80000000000004" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="player0Label" prefHeight="73.0" prefWidth="281.0" text=" Player1 - Token1 - Money1" textAlignment="CENTER" GridPane.rowIndex="1" />
+            <Label fx:id="player1Label" prefHeight="18.0" prefWidth="274.0" text=" Player2 - Token2 - Money2" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="player2Label" prefHeight="16.0" prefWidth="295.0" text=" Player3- Token3 - Money3" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label fx:id="player4Label" prefHeight="51.0" prefWidth="201.0" text=" Player5 - Token5 - Money5" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="player3Label" prefHeight="34.0" prefWidth="286.0" text=" Player4 - Token4 - Money4" textAlignment="CENTER" GridPane.rowIndex="3" />
+            <Label fx:id="player5Label" prefHeight="51.0" prefWidth="290.0" text=" Player6- Token6 - Money6" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <ScrollPane prefHeight="219.0" prefWidth="264.0" GridPane.rowIndex="4">
+               <content>
+                  <TextFlow fx:id="player3Properties" prefHeight="214.0" prefWidth="263.0" />
+               </content>
+            </ScrollPane>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <content>
+                  <TextFlow fx:id="player0Properties" prefHeight="171.0" prefWidth="266.0" />
+               </content>
+            </ScrollPane>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <content>
+                  <TextFlow fx:id="player1Properties" prefHeight="170.0" prefWidth="270.0" />
+               </content>
+            </ScrollPane>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <content>
+                  <TextFlow fx:id="player4Properties" prefHeight="215.0" prefWidth="263.0" />
+               </content>
+            </ScrollPane>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <content>
+                  <TextFlow fx:id="player2Properties" prefHeight="177.0" prefWidth="281.0" />
+               </content>
+            </ScrollPane>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <content>
+                  <TextFlow fx:id="player5Properties" prefHeight="214.0" prefWidth="281.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </GridPane>
+      <Button layoutX="1768.0" layoutY="865.0" mnemonicParsing="false" onAction="#handleQuitButton" prefHeight="48.0" prefWidth="125.0" text="Quit game" />
+      <Text fx:id="playerTurn" layoutX="1262.0" layoutY="868.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="286.2978515625">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font></Text>
+      <StackPane fx:id="square20" layoutX="3.0" layoutY="2.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+            <ImageView fitHeight="92.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@models/freeparking_tile.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane fx:id="square21" layoutX="97.0" layoutY="2.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ed0707" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square22" layoutX="190.0" layoutY="2.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+            <ImageView fitHeight="87.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+               <image>
+                  <Image url="@models/chance_tile.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane fx:id="square23" layoutX="286.0" layoutY="2.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ed0707" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square24" layoutX="382.0" layoutY="2.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ed0707" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square25" layoutX="478.0" layoutY="2.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square26" layoutX="574.0" layoutY="2.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f6ff1f" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square27" layoutX="670.0" layoutY="2.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f6ff1f" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square28" layoutX="766.0" layoutY="2.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square29" layoutX="862.0" layoutY="2.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f6ff1f" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square19" layoutX="3.0" layoutY="95.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff591f" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square18" layoutX="3.0" layoutY="185.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff591f" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square17" layoutX="3.0" layoutY="275.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+            <ImageView fitHeight="51.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@models/community_chest_tile.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane fx:id="square16" layoutX="3.0" layoutY="365.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff591f" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square15" layoutX="3.0" layoutY="455.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square14" layoutX="3.0" layoutY="545.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1fd9" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square13" layoutX="3.0" layoutY="635.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1fd9" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square12" layoutX="3.0" layoutY="725.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square11" layoutX="3.0" layoutY="815.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1fd9" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square9" layoutX="97.0" layoutY="905.0">
+         <children>
+            <Rectangle id="square9" fx:id="property8" arcHeight="5.0" arcWidth="5.0" fill="#68b5fd" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square8" layoutX="190.0" layoutY="905.0">
+         <children>
+            <Rectangle id="square8" fx:id="property7" arcHeight="5.0" arcWidth="5.0" fill="#68b5fd" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square7" layoutX="286.0" layoutY="905.0">
+         <children>
+            <Rectangle id="square7" fx:id="property6" arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+            <ImageView fitHeight="89.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+               <image>
+                  <Image url="@models/chance_tile.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane fx:id="square6" layoutX="382.0" layoutY="905.0">
+         <children>
+            <Rectangle id="square6" fx:id="property5" arcHeight="5.0" arcWidth="5.0" fill="#68b5fd" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square5" layoutX="478.0" layoutY="905.0">
+         <children>
+            <Rectangle id="square5" arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square4" layoutX="574.0" layoutY="905.0">
+         <children>
+            <Rectangle id="square4" arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square3" layoutX="670.0" layoutY="905.0">
+         <children>
+            <Rectangle id="square3" fx:id="property2" arcHeight="5.0" arcWidth="5.0" fill="#c24506" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square2" layoutX="766.0" layoutY="905.0">
+         <children>
+            <Rectangle id="square2" fx:id="property1" arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+            <ImageView fitHeight="87.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@models/community_chest_tile.png" />
+               </image></ImageView>
+         </children>
+      </StackPane>
+      <StackPane fx:id="square1" layoutX="862.0" layoutY="905.0">
+         <children>
+            <Rectangle id="square1" arcHeight="5.0" arcWidth="5.0" fill="#c24506" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square38" layoutX="958.0" layoutY="725.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square37" layoutX="958.0" layoutY="635.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f4aff" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square36" layoutX="958.0" layoutY="545.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+            <ImageView fitHeight="86.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+               <image>
+                  <Image url="@models/chance_tile.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane fx:id="square35" layoutX="958.0" layoutY="455.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square34" layoutX="958.0" layoutY="365.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#16ba00" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square33" layoutX="958.0" layoutY="275.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+            <ImageView fitHeight="78.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@models/community_chest_tile.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane fx:id="square32" layoutX="958.0" layoutY="185.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#16ba00" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square31" layoutX="958.0" layoutY="95.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#16ba00" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane layoutX="99.0" layoutY="98.0" prefHeight="806.0" prefWidth="858.0">
+         <children>
+            <ImageView fitHeight="805.0" fitWidth="930.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+               <image>
+                  <Image url="@models/monopoly-board32.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane fx:id="square30" layoutX="958.0" layoutY="2.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+            <ImageView fitHeight="89.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@models/goto_jail_tile.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane fx:id="square39" layoutX="958.0" layoutY="815.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f4aff" height="90.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="square0" layoutX="958.0" layoutY="905.0">
+         <children>
+            <Rectangle id="square0" arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+            <ImageView fitHeight="96.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@models/start_tile.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane fx:id="square10" layoutX="3.0" layoutY="905.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#86edac" height="96.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+            <ImageView id="square10" fitHeight="93.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@models/jail_tile.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <GridPane fx:id="logPane" gridLinesVisible="true" layoutX="1061.0" layoutY="476.0" prefHeight="251.0" prefWidth="668.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="39.199951171875" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="203.0000244140625" minHeight="10.0" prefHeight="201.400048828125" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" prefHeight="54.0" prefWidth="665.0" text="Game Log">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <ScrollPane fx:id="logScrollPane" hvalue="1.0" prefHeight="261.0" prefWidth="699.0" vvalue="1.0" GridPane.rowIndex="1">
+               <content>
+                  <Text fx:id="logTxt" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="log" wrappingWidth="659.0977783203125" />
+               </content>
+            </ScrollPane>
+         </children>
+      </GridPane>
+      <Button layoutX="1767.0" layoutY="521.0" mnemonicParsing="false" onAction="#openChatPanel" prefHeight="48.0" prefWidth="126.0" text="Chat" />
+      <Button fx:id="tradeButton" layoutX="1767.0" layoutY="589.0" mnemonicParsing="false" onAction="#openTradePanel" prefHeight="48.0" prefWidth="126.0" text="Trade" />
+      <Label fx:id="speedDie" alignment="CENTER" contentDisplay="CENTER" layoutX="1354.0" layoutY="973.0" prefHeight="26.0" prefWidth="106.0" text="SpeedDie" textAlignment="CENTER" textFill="#902f2f">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
